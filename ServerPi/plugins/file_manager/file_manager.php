@@ -70,7 +70,7 @@
 					}
 					else
 					{
-						$size = filesize_char(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file);
+						$size = filesize_char($_SERVER['DOCUMENT_ROOT'] . '/' . $_GET["dir"] . $file);
 						echo '<tr><td><a id="file" href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a id="file" title="Remove this file" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) . '" onclick="return(confirm(\'Are you sure to delete this file ?\'));">×</a></td></tr>';
 					}
 				}
