@@ -1,9 +1,9 @@
 <div id="button">
 	<a href="#">
-		<div id="mount"><p>Mount /dev/sda1</p></div>
+		<div id="mount"><p>Mount</p></div>
 	</a>
 	<a href="">
-		<div id="right"><p>Chmod 777</p></div>
+		<div id="right"><p>Set right to all files</p></div>
 	</a>
 	<a href="ServerPi/plugins/button/reboot.php">
 		<div id="reboot"><p>Reboot</p></div>
