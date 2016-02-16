@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<title>Rebooting the system...</title>
-		<link rel="icon" href="ServerPi/images/favicon.png" type="image/x-ico"/>
+		<link rel="icon" href="../../images/favicon.png" type="image/x-ico"/>
 		<style>
 			body {
 				margin: 0 auto;
 				font-family: Arial;
-				background-image: url('ServerPi/images/bg.png');
+				background-image: url('../../images/bg.png');
 			}
 
 			#box {
@@ -34,4 +34,4 @@
 		</div>
 	</body>
 </html>
-<?php shell_exec("sudo reboot"); ?>
+<?php exec('bash -c "sleep 5; sudo reboot" > /dev/null &'); ?>
