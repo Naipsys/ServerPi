@@ -1,0 +1,52 @@
+#button
+{	
+	width: 800px;
+	height: 100px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	background-color: #060606;
+}
+
+#mount
+{
+	float: left;
+	width: 25%;
+	height: 100%;
+	background-color: #1a8bfe;
+}
+
+#right
+{
+	float: left;
+	width: 25%;
+	height: 100%;
+	background-color: #29d251;
+}
+#reboot
+{
+	float: left;
+	width: 25%;
+	height: 100%;
+	background-color: #f24f5a;
+}
+
+#temp
+{
+	float: right;
+	width: 25%;
+	height: 100%;
+	background-color: #e3a42c;
+}
+
+#mount:hover, #right:hover, #reboot:hover, #temp:hover
+{
+	opacity: 0.8;
+}
+
+#mount p, #right p, #reboot p, #temp p
+{
+	margin-top: 40px;
+	color: white;
+	text-align:center;
+	text-transform: uppercase; 
+}
