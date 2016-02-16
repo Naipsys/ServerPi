@@ -19,22 +19,6 @@
 				return $size;
 			}
 		}
-
-				// try the Windows COM interface
-		if ($iswin && class_exists("COM")) {
-			try {
-				$fsobj = new COM('Scripting.FileSystemObject');
-				$f = $fsobj->GetFile( realpath($file) );
-				$size = $f->Size;
-			} catch (Exception $e) {
-				$size = null;
-			}
-			if (ctype_digit($size)) {
-				return $size;
-			}
-		}
-
-				// if all else fails
 		return filesize($file);
 	}
 
