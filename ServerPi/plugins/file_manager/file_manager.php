@@ -70,10 +70,10 @@
 	if (is_dir($dir))
 	{
 		echo '<table id="list"><tbody>';
-		echo '<tr><th>Name</th><th>Size</th><th width=10></th></tr>';
+		echo '<tr><th>Name - /'. $dirname .'</th><th>Size</th><th width=10></th></tr>';
 		if ($dirname == '' || $dirname == "./") { } // If the directory is the root, no rows will be used for it.
-		elseif (dirname($dirname) == '.') { echo '<tr><td><a id="dir" href="?dir=""">/</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; } // If the parent's directory is the root, only display / in a rows.
-		else { echo '<tr><td><a id="dir" href="?dir='. dirname($dirname) .'/">/'. dirname($dirname) .'/</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; } // Display the parent's directory if the other test don't works.
+		elseif (dirname($dirname) == '.') { echo '<tr><td><a id="file" href="?dir=">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; } // If the parent's directory is the root, only display / in a rows.
+		else { echo '<tr><td><a id="file" href="?dir='. dirname($dirname) .'/">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; } // Display the parent's directory if the other test don't works.
 		if ($dh = opendir($dir)) 
 		{
 			while (($file = readdir($dh)) !== false) 

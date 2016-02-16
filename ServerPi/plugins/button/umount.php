@@ -1,5 +1,7 @@
 <?php
-	shell_exec('sudo /sbin/umount ' . urldecode($_GET['name']));
+	$ADRESS = 'http://192.168.1.150';
+	exec('sudo /bin/umount ' . exec('sudo fdisk -l | grep /dev/sd | tail -n 1 | cut -d " " -f 1'));
 	rmdir($_SERVER['DOCUMENT_ROOT'] . '/usb/');	
-	header('Location : http://192.168.1.150/index.php');
+	header('Location: '. $ADRESS);
+	exit;
 ?>

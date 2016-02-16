@@ -8,11 +8,11 @@
 		{
 			if (is_dir($_SERVER['DOCUMENT_ROOT'] . '/usb/'))
 			{
-				echo '<a href="ServerPi/plugins/button/umount.php?name=' . urlencode($cmd) . '"><div id="umount"><p>Unmount ' . $cmd . '</p></div></a>';
+				echo '<a href="ServerPi/plugins/button/umount.php"><div id="umount"><p>Unmount ' . $cmd . '</p></div></a>';
 			}
 			else
 			{
-				echo '<a href="ServerPi/plugins/button/mount.php?name=' . urlencode($cmd) . '"><div id="mount"><p>Mount ' . $cmd . '</p></div></a>';
+				echo '<a href="ServerPi/plugins/button/mount.php"><div id="mount"><p>Mount ' . $cmd . '</p></div></a>';
 			}
 		}
 	?>
