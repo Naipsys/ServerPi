@@ -20,14 +20,14 @@
 	if (is_file($adress))
 	{
 		if (unlink($adress)) {
-		$adress = 'http://192.168.1.150/index.php?dir=' . substr(dirname($adress), (strlen($_SERVER['DOCUMENT_ROOT']) + 1));
+		$adress = 'http://192.168.1.150/index.php?dir=' . substr(dirname($adress), (strlen($_SERVER['DOCUMENT_ROOT']) + 1)) .'/';
 		header('Location: ' . $adress); }
 		else { echo 'Error : 100. Path : ' .$adress; }
 	}
 	else
 	{
 		rrmdir($adress);
-		$adress = 'http://192.168.1.150/index.php?dir=' . substr(dirname($adress), (strlen($_SERVER['DOCUMENT_ROOT']) + 1));
+		$adress = 'http://192.168.1.150/index.php?dir=' . substr(dirname($adress), (strlen($_SERVER['DOCUMENT_ROOT']) + 1)) .'/';
 		header('Location: '. $adress);
 	}
 ?>

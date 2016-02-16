@@ -12,7 +12,6 @@ body
 	height: 200px;
 	background-image: url(ServerPi/images/logo.png);
 	margin: 0 auto;
-
 }
 
 #footer

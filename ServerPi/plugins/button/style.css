@@ -4,21 +4,20 @@
 	height: 100px;
 	margin: 0 auto;
 	margin-bottom: 20px;
-	background-color: #060606;
 }
 
 #mount
 {
 	float: left;
-	width: 25%;
+	width: 50%;
 	height: 100%;
 	background-color: #1a8bfe;
 }
 
-#right
+#umount
 {
 	float: left;
-	width: 25%;
+	width: 50%;
 	height: 100%;
 	background-color: #29d251;
 }
@@ -38,15 +37,30 @@
 	background-color: #e3a42c;
 }
 
-#mount:hover, #right:hover, #reboot:hover, #temp:hover
+#mount:hover, #umount:hover, #reboot:hover
 {
 	opacity: 0.8;
 }
 
-#mount p, #right p, #reboot p, #temp p
+#mount p, #umount p, #reboot p, #temp p
 {
 	margin-top: 40px;
 	color: white;
 	text-align:center;
 	text-transform: uppercase; 
+}
+
+#nothing_to_mount
+{
+	float: left;
+	width: 50%;
+	height: 100%;
+	background-color: #181818;
+}
+
+#nothing_to_mount p
+{
+	margin-top: 40px;
+	color: white;
+	text-align:center;
 }
