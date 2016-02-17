@@ -1,65 +1,56 @@
-#button
-{	
+#button {	
 	width: 800px;
 	height: 100px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
 
-#mount
-{
+#mount {
 	float: left;
 	width: 50%;
 	height: 100%;
 	background-color: #1a8bfe;
 }
 
-#umount
-{
+#umount {
 	float: left;
 	width: 50%;
 	height: 100%;
 	background-color: #29d251;
 }
-#reboot
-{
+#reboot {
 	float: left;
 	width: 25%;
 	height: 100%;
 	background-color: #f24f5a;
 }
 
-#temp
-{
+#temp {
 	float: right;
 	width: 25%;
 	height: 100%;
 	background-color: #e3a42c;
 }
 
-#mount:hover, #umount:hover, #reboot:hover
-{
+#mount:hover, #umount:hover, #reboot:hover {
 	opacity: 0.8;
 }
 
-#mount p, #umount p, #reboot p, #temp p
-{
+#mount p, #umount p, #reboot p, #temp p {
 	margin-top: 40px;
 	color: white;
 	text-align:center;
 	text-transform: uppercase; 
 }
 
-#nothing_to_mount
-{
+#nothing_to_mount {
 	float: left;
 	width: 50%;
 	height: 100%;
 	background-color: #181818;
 }
 
-#nothing_to_mount p
-{
+#nothing_to_mount p {
 	margin-top: 40px;
 	color: white;
 	text-align:center;
