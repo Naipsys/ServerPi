@@ -1,7 +1,6 @@
 <?php
 	// function found here : http://stackoverflow.com/questions/5501451/php-x86-how-to-get-filesize-of-2-gb-file-without-external-program/5504829#5504829
-	function filesize64($file)
-	{
+	function filesize64($file) {
 		static $iswin;
 		if (!isset($iswin)) {
 			$iswin = (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN');
@@ -24,27 +23,21 @@
 	}
 
 	// filesize_char : give a readable size of a file.
-	function filesize_char($file)
-	{
+	function filesize_char($file) {
 		$size = filesize64($file);
-		if ($size > pow(2,40))
-		{
+		if ($size > pow(2,40)) {
 			return round(filesize64($file)/pow(2,40),2) . 'TB';
 		}
-		elseif ($size > pow(2,30))
-		{
+		elseif ($size > pow(2,30)) {
 			return round(filesize64($file)/pow(2,30),2) . 'GB';
 		}
-		elseif ($size > pow(2,20))
-		{
+		elseif ($size > pow(2,20)) {
 			return round(filesize64($file)/pow(2,20),2) . 'MB';
 		}
-		elseif ($size > pow(2,10))
-		{
+		elseif ($size > pow(2,10)) {
 			return round(filesize64($file)/pow(2,10),2) . 'kB';
 		}
-		else
-		{
+		else {
 			return round(filesize64($file),2) . 'B';
 		}
 	}
