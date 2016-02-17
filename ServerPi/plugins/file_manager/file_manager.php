@@ -49,15 +49,21 @@
 	}
 
 	$dir = "./" . $_GET["dir"];
-	$dirname = $_GET["dir"];
 	// Test if the directory exist.
 	if (is_dir($dir))
 	{
 		echo '<table id="list"><tbody>';
-		echo '<tr><th>Name - /'. $dirname .'</th><th>Size</th><th width=10></th></tr>';
-		if ($dirname == '' || $dirname == "./") { } // If the directory is the root, no rows will be used for it.
-		elseif (dirname($dirname) == '.') { echo '<tr><td><a id="file" href="?dir=">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; } // If the parent's directory is the root, only display / in a rows.
-		else { echo '<tr><td><a id="file" href="?dir='. dirname($dirname) .'/">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; } // Display the parent's directory if the other test don't works.
+		if ($_GET["dir"] == '' || $_GET["dir"] == "./" || $_GET["dir"] == "/") { 
+			echo '<tr><th>Name - /</th><th>Size</th><th width=10></th></tr>';
+		}
+		elseif (dirname($_GET["dir"]) == '.') { 
+			echo '<tr><th>Name - /'. $_GET["dir"] .'</th><th>Size</th><th width=10></th></tr>';
+			echo '<tr><td><a id="file" href="?dir=">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; 
+		} 
+		else { 
+			echo '<tr><th>Name - /'. $_GET["dir"] .'</th><th>Size</th><th width=10></th></tr>';
+			echo '<tr><td><a id="file" href="?dir='. dirname($_GET["dir"]) .'/">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; 
+		}
 		if ($dh = opendir($dir)) 
 		{
 			while (($file = readdir($dh)) !== false) 
@@ -70,7 +76,7 @@
 					}
 					else
 					{
-						$size = filesize_char($_SERVER['DOCUMENT_ROOT'] . '/' . $_GET["dir"] . $file);
+						$size = filesize_char($ADRESS . '/' . $_GET["dir"] . $file);
 						echo '<tr><td><a id="file" href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a id="file" title="Remove this file" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) . '" onclick="return(confirm(\'Are you sure to delete this file ?\'));">×</a></td></tr>';
 					}
 				}

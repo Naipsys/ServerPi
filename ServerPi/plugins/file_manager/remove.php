@@ -1,4 +1,5 @@
 <?php
+	include('../../config.php');	
 	function rrmdir($dir)
 	{ 
 		if (is_dir($dir)) 
@@ -20,14 +21,17 @@
 	if (is_file($adress))
 	{
 		if (unlink($adress)) {
-		$adress = 'http://192.168.1.150/index.php?dir=' . substr(dirname($adress), (strlen($_SERVER['DOCUMENT_ROOT']) + 1)) .'/';
-		header('Location: ' . $adress); }
+		$adress = $URL .'/index.php?dir='. substr(dirname($adress), strlen($ADRESS) + 1) .'/';
+		header('Location: ' . $adress); 
+		exit;
+		}
 		else { echo 'Error : 100. Path : ' .$adress; }
 	}
 	else
 	{
 		rrmdir($adress);
-		$adress = 'http://192.168.1.150/index.php?dir=' . substr(dirname($adress), (strlen($_SERVER['DOCUMENT_ROOT']) + 1)) .'/';
+		$adress = $URL .'/index.php?dir='. substr(dirname($adress), strlen($ADRESS) + 1) .'/';
 		header('Location: '. $adress);
+		exit;
 	}
 ?>
