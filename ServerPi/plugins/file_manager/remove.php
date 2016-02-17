@@ -1,5 +1,6 @@
 <?php
-	include('../../config.php');	
+	include('../../config.php');
+	// function found here : http://php.net/manual/en/function.rmdir.php#98622
 	function rrmdir($dir)
 	{ 
 		if (is_dir($dir)) 
