@@ -27,10 +27,11 @@ table tr:nth-child(even) {
 }
 
 a {
+	color: #ff2439;
 	text-decoration: none;
 }
 
-#element:hover {
+a:hover {
 	color : white;
 }
 
