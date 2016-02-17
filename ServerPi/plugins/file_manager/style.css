@@ -1,4 +1,4 @@
-table {
+#file_manager table {
 	border-collapse: collapse;
 	width: 800px;
 	color: white;
@@ -6,43 +6,43 @@ table {
 	margin-bottom: 20px;
 }
 
-table tr {
+#file_manager table tr {
 	background-color: #212121;
 }
 
-table tr:nth-child(odd):hover {
+#file_manager table tr:nth-child(odd):hover {
 	background: #3e3e3e;
 }
 
-table tr:nth-child(even):hover {
+#file_manager table tr:nth-child(even):hover {
 	background-color: #3e3e3e;
 }
 
-table tr:nth-child(odd) {
+#file_manager table tr:nth-child(odd) {
 	background-color: #181818;
 }
 
-table tr:nth-child(even) {
+#file_manager table tr:nth-child(even) {
 	background-color: #212121;
 }
 
-a {
+#file_manager a {
 	color: #ff2439;
 	text-decoration: none;
 }
 
-a:hover {
+#file_manager a:hover {
 	color : white;
 }
 
-th {
+#file_manager th {
 	text-align: left;
 	font-weight:normal;
 	color: white;
 	padding: 5px;
 }
 
-td {
+#file_manager td {
 	color: grey;
 	padding: 5px;
 }
