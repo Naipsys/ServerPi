@@ -1,15 +1,11 @@
 <?php
 	include('../../config.php');
 	// function found here : http://php.net/manual/en/function.rmdir.php#98622
-	function rrmdir($dir)
-	{ 
-		if (is_dir($dir)) 
-		{ 
+	function rrmdir($dir) { 
+		if (is_dir($dir)) { 
 			$objects = scandir($dir); 
-			foreach ($objects as $object) 
-			{ 
-				if ($object != "." && $object != "..") 
-				{ 
+			foreach ($objects as $object) { 
+				if ($object != "." && $object != "..") { 
 		 			if (filetype($dir."/".$object) == "dir") rrmdir($dir."/".$object); else unlink($dir."/".$object); 
 				} 
 			} 
@@ -19,8 +15,7 @@
 	} 
 
 	$adress = urldecode($_GET['adress']);
-	if (is_file($adress))
-	{
+	if (is_file($adress)) {
 		if (unlink($adress)) {
 		$adress = $URL .'/index.php?dir='. substr(dirname($adress), strlen($ADRESS) + 1) .'/';
 		header('Location: ' . $adress); 
@@ -28,8 +23,7 @@
 		}
 		else { echo 'Error : 100. Path : ' .$adress; }
 	}
-	else
-	{
+	else {
 		rrmdir($adress);
 		$adress = $URL .'/index.php?dir='. substr(dirname($adress), strlen($ADRESS) + 1) .'/';
 		header('Location: '. $adress);
