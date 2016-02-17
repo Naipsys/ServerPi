@@ -7,20 +7,20 @@
     padding-bottom: 15px;
 }
 
-#schema {
+#storage_box #schema {
     width: 775px;
     height: 5px;
     background-color: #29d251;
     margin: 0 auto;
 }
 
-#used {
+#storage_box #used {
 	width: <?php $used = disk_total_space("/"); $free = disk_free_space("/"); $ratio = round(1-$free/$used,2); $width = floor(775 * $ratio); echo $width; ?>px;
     height: 5px;
     background-color: #f24f5a;
 }
 
-#storage_box p {
+#storage_box #storage_box p {
     width: 775px;
     margin: 0 auto;
     text-align: right;
