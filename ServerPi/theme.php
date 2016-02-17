@@ -1,29 +1,25 @@
-body
-{
+body {
 	margin: 0 auto;
 	background-image: url(ServerPi/images/bg.png);
 	background-repeat: repeat;
 	font-family: Arial;
 }
 
-#logo
-{
+#logo {
 	width: 400px;
 	height: 200px;
 	background-image: url(ServerPi/images/logo.png);
 	margin: 0 auto;
 }
 
-#footer
-{
+#footer {
 	width: 400px;
 	height: 10px;
 	margin: 0 auto;
 	margin-top: -4px;
 }
 
-#footer p
-{
+#footer p {
 	color: #4a4a4a;
 	text-align: center;
 	padding-bottom: 16px;
