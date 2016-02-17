@@ -45,7 +45,7 @@
 	$dir = "./" . $_GET["dir"];
 	// Test if the directory exist.
 	if (is_dir($dir)) {
-		echo '<div id="file_manager"><table><tbody>';
+		echo '<div id="file_manager_box"><table><tbody>';
 		if ($_GET["dir"] == '' || $_GET["dir"] == "./" || $_GET["dir"] == "/") { 
 			echo '<tr><th>Name - /</th><th>Size</th><th width=10></th></tr>';
 		}
@@ -74,6 +74,6 @@
 		}
 	}
 	else {
-		echo '<div id="file_manager"><table><tr><th>Dossier introuvable</th></tr></table></div>';
+		echo '<div id="file_manager_box"><table><tr><th>Dossier introuvable</th></tr></table></div>';
 	}
 ?>
