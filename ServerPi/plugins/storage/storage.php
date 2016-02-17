@@ -1,6 +1,6 @@
-<div id="espace">
-	<div id="barre">
-		<div id="libre">
+<div id="storage_box">
+	<div id="schema">
+		<div id="used">
 		</div>
 	</div>
 	<?php
