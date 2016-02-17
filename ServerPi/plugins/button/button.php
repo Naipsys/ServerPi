@@ -1,4 +1,4 @@
-<div id="button">
+<div id="button_box">
 	<?php 
 		$cmd = shell_exec('sudo fdisk -l | grep /dev/sd | tail -n 1 | cut -d " " -f 1');
 		if ($cmd == "") {
