@@ -1,5 +1,4 @@
-table
-{
+table {
 	border-collapse: collapse;
 	width: 800px;
 	color: white;
@@ -7,66 +6,42 @@ table
 	margin-bottom: 20px;
 }
 
-table tr
-{
+table tr {
 	background-color: #212121;
 }
 
-table tr:nth-child(odd):hover
-{
+table tr:nth-child(odd):hover {
 	background: #3e3e3e;
 }
 
-table tr:nth-child(even):hover
-{
+table tr:nth-child(even):hover {
 	background-color: #3e3e3e;
 }
 
-table tr:nth-child(odd)
-{
+table tr:nth-child(odd) {
 	background-color: #181818;
 }
 
-table tr:nth-child(even)
-{
+table tr:nth-child(even) {
 	background-color: #212121;
 }
 
-a
-{
-	color: #ff2439;
+a {
 	text-decoration: none;
 }
 
-#file 
-{
-	color : grey;
-}
-#file:hover
-{
+#element:hover {
 	color : white;
 }
 
-#dir
-{
-	color: red;
-}
-
-#dir:hover
-{
-	color: #fb8383;
-}
-
-th
-{
+th {
 	text-align: left;
 	font-weight:normal;
 	color: white;
 	padding: 5px;
 }
 
-td
-{
+td {
 	color: grey;
 	padding: 5px;
 }
