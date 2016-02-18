@@ -1,6 +1,6 @@
 body {
 	margin: 0 auto;
-	background-image: url(ServerPi/images/bg.png);
+	background-image: url(images/bg.png);
 	background-repeat: repeat;
 	font-family: Arial;
 }
@@ -8,7 +8,7 @@ body {
 #logo {
 	width: 400px;
 	height: 200px;
-	background-image: url(ServerPi/images/logo.png);
+	background-image: url(images/logo.png);
 	margin: 0 auto;
 }
 

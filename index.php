@@ -8,8 +8,10 @@
 		<?php 	$plugins_ref = fopen("ServerPi/plugins/plugins", "r");
 			if ($plugins_ref) {
 				while (!feof($plugins_ref)) {
-					$buffer = fgets($plugins_ref);
+					$buffer = preg_replace( "/\r|\n/", "", fgets($plugins_ref));
+					if ($buffer != "") {
 					echo '<link rel="stylesheet" href="ServerPi/plugins/'. $buffer .'/style.css" type="text/css">';
+					}
 				}
 				fclose($plugins_ref);
 			}
@@ -20,8 +22,10 @@
 		<?php 	$plugins_ref = fopen("ServerPi/plugins/plugins", "r");
 			if ($plugins_ref) {
 				while (!feof($plugins_ref)) {
-					$buffer = fgets($plugins_ref);
+					$buffer = preg_replace( "/\r|\n/", "", fgets($plugins_ref));
+					if ($buffer != "") {
 					include('ServerPi/plugins/'. $buffer .'/'. $buffer .'.php');
+					}
 				}
 				fclose($plugins_ref);
 			}

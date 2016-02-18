@@ -5,52 +5,52 @@
 	margin-bottom: 20px;
 }
 
-#button_box #mount {
+#button_box .mount {
 	float: left;
 	width: 50%;
 	height: 100%;
 	background-color: #1a8bfe;
 }
 
-#button_box #umount {
+#button_box .umount {
 	float: left;
 	width: 50%;
 	height: 100%;
 	background-color: #29d251;
 }
-#button_box #reboot {
+#button_box .reboot {
 	float: left;
 	width: 25%;
 	height: 100%;
 	background-color: #f24f5a;
 }
 
-#button_box #temp {
+#button_box .temp {
 	float: right;
 	width: 25%;
 	height: 100%;
 	background-color: #e3a42c;
 }
 
-#button_box #mount:hover, #button_box #umount:hover, #button_box #reboot:hover {
-	opacity: 0.8;
+#button_box .mount:hover, .umount:hover, .reboot:hover {
+	opacity: 0.9;
 }
 
-#button_box #mount p, #button_box #umount p, #button_box #reboot p, #button_box #temp p {
+#button_box .mount p, .umount p, .reboot p, .temp p {
 	margin-top: 40px;
 	color: white;
 	text-align:center;
 	text-transform: uppercase; 
 }
 
-#button_box #nothing_to_mount {
+#button_box .nothing_to_mount {
 	float: left;
 	width: 50%;
 	height: 100%;
 	background-color: #181818;
 }
 
-#button_box #nothing_to_mount p {
+#button_box .nothing_to_mount p {
 	margin-top: 40px;
 	color: white;
 	text-align:center;

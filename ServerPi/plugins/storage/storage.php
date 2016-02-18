@@ -1,6 +1,6 @@
 <div id="storage_box">
-	<div id="schema">
-		<div id="used">
+	<div class="schema">
+		<div class="used" style="width:<?php $used = disk_total_space("/"); $free = disk_free_space("/"); $ratio = round(1-$free/$used,2); $width = floor(775 * $ratio); echo $width; ?>px;">
 		</div>
 	</div>
 	<?php
