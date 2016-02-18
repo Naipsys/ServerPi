@@ -46,7 +46,7 @@
 	$dir = "./" . $_GET["dir"];
 	// Test if the directory exist.
 	if (is_dir($dir)) {
-		echo '<div id="file_manager_box"><table><col width=709><col width=81><col width=10>';
+		echo '<div id="file_manager_box"><table><col width=709><col width=81><col width=10><tbody>';
 		if ($_GET["dir"] == '' || $_GET["dir"] == "./" || $_GET["dir"] == "/") { 
 			echo '<tr class="legend"><th>Name - /</th><th>Size</th><th></th></tr>';
 		}
@@ -105,16 +105,16 @@
 								<input type="text" name="path">
 								<input type="submit" name="submit" value="Move">
 								</form>
-								<div class="delete">
-								<a href="ServerPi/plugins/file_manager/delete.php">Delete</a>
-								</div>
+								<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post">
+								<input type="submit" name="submit" value="Delete">
+								</form>
 							</td></tr>';
 						$accordion_nb++;
 					}
 				}
 			}
 			closedir($dir_opened);
-			echo '</table></div>';
+			echo '</tbody></table></div>';
 		}
 	}
 	else {
