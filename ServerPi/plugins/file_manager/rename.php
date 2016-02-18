@@ -1,4 +1,5 @@
 <?php
+	include('../../config.php');
 	$path = $_POST['path'];
 	$new_name = $_POST['new_name'];
 	if (rename($path, dirname($path) . '/' . $new_name)) {
