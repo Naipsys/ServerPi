@@ -82,7 +82,7 @@
 								<input type="submit" name="submit" value="Move">
 								</form>
 								<div class="delete">
-								<a href="ServerPi/plugins/file_manager/delete.php>Delete</a>
+								<a href="ServerPi/plugins/file_manager/delete.php">Delete</a>
 								</div>
 							</td></tr>';
 						$accordion_nb++;
@@ -106,7 +106,7 @@
 								<input type="submit" name="submit" value="Move">
 								</form>
 								<div class="delete">
-								<a href="ServerPi/plugins/file_manager/delete.php>Delete</a>
+								<a href="ServerPi/plugins/file_manager/delete.php">Delete</a>
 								</div>
 							</td></tr>';
 						$accordion_nb++;
