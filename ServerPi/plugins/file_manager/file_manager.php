@@ -62,10 +62,12 @@
 				if( $file != '.' && $file != '..' && $file != 'index.php' && $file != 'ServerPi') {
 					if(filetype($dir . $file) == "dir") {
 						echo '<tr><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td WIDTH=81>-</td><td width=10><a title="Remove this dir" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) .'/" onclick="return(confirm(\'Are you sure to delete this directory ?\'));">×</a></td></tr>';
+						echo '<div class="accordion">lol</div>';
 					}
 					else {
 						$size = filesize_char($ADRESS . '/' . $_GET["dir"] . $file);
 						echo '<tr><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a title="Remove this file" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) . '" onclick="return(confirm(\'Are you sure to delete this file ?\'));">×</a></td></tr>';
+						echo '<div class="accordion">lol</div>';
 					}
 				}
 			}
