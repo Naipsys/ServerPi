@@ -88,6 +88,10 @@
 	text-transform: uppercase;
 }
 
+#file_manager_box .rename input[type=submit]:hover {
+	opacity: 0.8;
+}
+
 #file_manager_box .move input[type=text] {
 	width: 100%;
 	height: 50%;
@@ -95,7 +99,6 @@
 	background-color: #2980b9;
 	color: white;
 	text-align: center;
-	text-transform: uppercase;
 }
 
 #file_manager_box .move input[type=submit] {
@@ -105,6 +108,11 @@
 	background-color: #419fdd;
 	color: white;
 	text-align: center;
+	text-transform: uppercase;
+}
+
+#file_manager_box .move input[type=submit]:hover {
+	opacity: 0.8;
 }
 
 #file_manager_box .delete input[type=submit] {
@@ -115,4 +123,8 @@
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+#file_manager_box .delete input[type=submit]:hover {
+	opacity: 0.8;
 }
