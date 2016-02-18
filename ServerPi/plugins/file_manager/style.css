@@ -74,7 +74,6 @@
 	background-color: #27ae60;
 	color: white
 	text-align: center;
-	padding: 10px;
 }
 
 #file_manager_box .rename input[type=submit] {
@@ -85,7 +84,6 @@
 	color: white
 	text-align: center;
 	text-transform: uppercase;
-	padding: 10px;
 }
 
 #file_manager_box .move input[type=text] {
@@ -95,7 +93,7 @@
 	background-color: #2980b9;
 	color: white
 	text-align: center;
-	padding: 10px;
+	text-transform: uppercase;
 }
 
 #file_manager_box .move input[type=submit] {
@@ -106,7 +104,6 @@
 	color: white
 	text-align: center;
 	text-transform: uppercase;
-	padding: 10px;
 }
 
 #file_manager_box .delete {
