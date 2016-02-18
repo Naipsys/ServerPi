@@ -71,7 +71,7 @@
 						else {
 							echo '<tr class="even"><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td>-</td><td><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
 						}
-						echo '<tr id="'. $accordion_nb .'accordion" class="accordion"><td>
+						echo '<tr id="'. $accordion_nb .'accordion" class="accordion"><td width=800>
 								<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
 								<input type="text" name="new_name">
 								<input type="submit" name="submit" value="Rename">
@@ -84,9 +84,6 @@
 								<input type="submit" name="submit" value="Delete">
 								</form>
 								</td>
-								<td>
-								</td>
-								<td><a href="#">×</a></td>
 							</tr>';
 						$accordion_nb++;
 					}
@@ -99,7 +96,7 @@
 						else {
 							echo '<tr class="even"><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td>'. $size . '</td><td><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
 						}
-						echo '<tr id="'. $accordion_nb .'accordion" class="accordion"><td>
+						echo '<tr id="'. $accordion_nb .'accordion" class="accordion"><td width=800>
 								<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
 								<input type="text" name="new_name">
 								<input type="submit" name="submit" value="Rename">
@@ -112,9 +109,6 @@
 								<input type="submit" name="submit" value="Delete">
 								</form>
 								</td>
-								<td>
-								</td>
-								<td><a href="#">×</a></td>
 							</tr>';
 						$accordion_nb++;
 					}
