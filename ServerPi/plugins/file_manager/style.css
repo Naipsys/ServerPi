@@ -55,14 +55,8 @@
 	display: block;
 }
 
-#file_manager_box .rename, .move {
+#file_manager_box .rename, .move, .delete {
 	float: left;
-	width: 33,3%;
-	height: 60px;
-}
-
-#file_manager_box .delete {
-	float: right;
 	width: 33,3%;
 	height: 60px;
 }
@@ -106,12 +100,13 @@
 	text-transform: uppercase;
 }
 
-#file_manager_box .delete {
+#file_manager_box .delete input[type=submit] {
 	width: 100%;
 	height: 100%;
+	border: 0;
+	background-color: #F24F5A;
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
-	background-color: #e74c3c;
-	padding-top: 20px;
+	margin: 0;
 }
