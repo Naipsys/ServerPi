@@ -58,11 +58,63 @@
 #file_manager_box .rename, .move {
 	float: left;
 	width: 33,3%;
-	height: 100px;
+	height: 60px;
 }
 
 #file_manager_box .delete {
 	float: right;
 	width: 33,3%;
-	height: 100px;
+	height: 60px;
+}
+
+#file_manager_box .rename input[type=text] {
+	width: 100%;
+	height: 50%;
+	border: 0;
+	background-color: #27ae60;
+	color: white
+	text-align: center;
+	padding: 10px;
+}
+
+#file_manager_box .rename input[type=sumbit] {
+	width: 100%;
+	height: 50%;
+	border: 0;
+	background-color: #34cf75;
+	color: white
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+#file_manager_box .move input[type=text] {
+	width: 100%;
+	height: 50%;
+	border: 0;
+	background-color: #2980b9;
+	color: white
+	text-align: center;
+	padding: 10px;
+}
+
+#file_manager_box .move input[type=sumbit] {
+	width: 100%;
+	height: 50%;
+	border: 0;
+	background-color: #419fdd;
+	color: white
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+#file_manager_box .delete {
+	#e74c3c
+	width: 100%;
+	height: 100%;
+	color: white
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 20px;
 }
