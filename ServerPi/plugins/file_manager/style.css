@@ -11,15 +11,15 @@
 }
 
 #file_manager_box .odd {
-	background-color: #181818;
-}
-
-#file_manager_box .even {
 	background-color: #212121;
 }
 
+#file_manager_box .even {
+	background-color: #181818;
+}
+
 #file_manager_box .odd:hover {
-	background: #3e3e3e;
+	background-color: #3e3e3e;
 }
 
 #file_manager_box .even:hover {
