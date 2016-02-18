@@ -79,7 +79,7 @@
 								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 								<input type="submit" name="submit" value="Rename">
 								</form>
-								<form class="move" action="ServerPi/plugins/file_manager/rename.php" method="post">
+								<form class="move" action="ServerPi/plugins/file_manager/move.php" method="post">
 								<input type="text" name="new_path">
 								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 								<input type="submit" name="submit" value="Move">
@@ -107,7 +107,7 @@
 								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 								<input type="submit" name="submit" value="Rename">
 								</form>
-								<form class="move" action="ServerPi/plugins/file_manager/rename.php" method="post">
+								<form class="move" action="ServerPi/plugins/file_manager/move.php" method="post">
 								<input type="text" name="new_path">
 								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 								<input type="submit" name="submit" value="Move">
