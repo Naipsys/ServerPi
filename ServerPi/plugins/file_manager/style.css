@@ -46,3 +46,11 @@
 #file_manager_box a:hover {
 	color : white;
 }
+
+#file_manager_box .accordion {
+	display: none;
+}
+
+#file_manager_box .accordion:target {
+	display: block;
+}
