@@ -54,3 +54,15 @@
 #file_manager_box .accordion:target {
 	display: block;
 }
+
+#file_manager_box .rename, .move {
+	float: left;
+	width: 33,3%;
+	height: 100px;
+}
+
+#file_manager_box .delete {
+	float: right;
+	width: 33,3%;
+	height: 100px;
+}
