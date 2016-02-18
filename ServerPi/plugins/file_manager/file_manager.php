@@ -71,7 +71,6 @@
 						else {
 							echo '<tr class="even"><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td>-</td><td><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
 						}
-						
 						echo '<tr id="'. $accordion_nb .'accordion" class="accordion"><td colspan=3 width=800>
 								<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
 								<input type="text" name="new_name">
@@ -81,9 +80,9 @@
 								<input type="text" name="path">
 								<input type="submit" name="submit" value="Move">
 								</form>
-								<div class="delete">
-								<a href="ServerPi/plugins/file_manager/delete.php">Delete</a>
-								</div>
+								<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post">
+								<input type="submit" name="submit" value="Delete">
+								</form>
 							</td></tr>';
 						$accordion_nb++;
 					}
