@@ -91,10 +91,10 @@
 						$size = filesize_char($ADRESS . '/' . $_GET["dir"] . $file);
 						//echo '<tr><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a title="Remove this file" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) . '" onclick="return(confirm(\'Are you sure to delete this file ?\'));">×</a></td></tr>';
 						if ($accordion_nb%2 == 1) {
-							echo '<tr class="odd"><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
+							echo '<tr class="odd"><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td>'. $size . '</td><td><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
 						}
 						else {
-							echo '<tr class="even"><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
+							echo '<tr class="even"><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td>'. $size . '</td><td><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
 						}
 						echo '<tr id="'. $accordion_nb .'accordion" class="accordion"><td colspan=3 width=800>
 								<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
