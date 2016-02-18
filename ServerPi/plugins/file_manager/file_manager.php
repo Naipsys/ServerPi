@@ -46,18 +46,18 @@
 	$dir = "./" . $_GET["dir"];
 	// Test if the directory exist.
 	if (is_dir($dir)) {
-		echo '<div id="file_manager_box"><table>';
+		echo '<div id="file_manager_box"><table><col width=709><col width=81><col width=10>';
 		if ($_GET["dir"] == '' || $_GET["dir"] == "./" || $_GET["dir"] == "/") { 
-			echo '<tr class="legend"><th>Name - /</th><th>Size</th><th width=10></th></tr>';
+			echo '<tr class="legend"><th>Name - /</th><th>Size</th><th></th></tr>';
 		}
 		elseif (dirname($_GET["dir"]) == '.') { 
-			echo '<tr class="legend"><th>Name - /'. $_GET["dir"] .'</th><th>Size</th><th width=10></th></tr>';
-			echo '<tr class="odd"><td><a href="?dir=">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>';
+			echo '<tr class="legend"><th>Name - /'. $_GET["dir"] .'</th><th>Size</th><th></th></tr>';
+			echo '<tr class="odd"><td><a href="?dir=">..</a></td><td>-</td><td></td></tr>';
 			$accordion_nb++;
 		} 
 		else { 
-			echo '<tr class="legend"><th>Name - /'. $_GET["dir"] .'</th><th>Size</th><th width=10></th></tr>';
-			echo '<tr class="odd"><td><a href="?dir='. dirname($_GET["dir"]) .'/">..</a></td><td WIDTH=81>-</td><td width=10></td></tr>'; 
+			echo '<tr class="legend"><th>Name - /'. $_GET["dir"] .'</th><th>Size</th><th></th></tr>';
+			echo '<tr class="odd"><td><a href="?dir='. dirname($_GET["dir"]) .'/">..</a></td><td>-</td><td width=10></td></tr>'; 
 			$accordion_nb++;
 		}
 		if ($dir_opened = opendir($dir)) {
@@ -66,10 +66,10 @@
 					if(filetype($dir . $file) == "dir") {
 						// echo '<tr><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td WIDTH=81>-</td><td width=10><a title="Remove this dir" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) .'/" onclick="return(confirm(\'Are you sure to delete this directory ?\'));">×</a></td></tr>';
 						if ($accordion_nb%2 == 1) {
-							echo '<tr class="odd"><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td WIDTH=81>-</td><td width=10><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
+							echo '<tr class="odd"><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td>-</td><td><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
 						}
 						else {
-							echo '<tr class="even"><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td WIDTH=81>-</td><td width=10><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
+							echo '<tr class="even"><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td>-</td><td><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
 						}
 						
 						echo '<tr id="'. $accordion_nb .'accordion" class="accordion"><td colspan=3 width=800>
