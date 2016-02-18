@@ -3,8 +3,8 @@
 <html>
 	<head>
 		<title><?php echo $TITLE; ?></title>
-		<link rel="icon" href="ServerPi/images/favicon.png" type="image/x-ico"/>
-		<style><?php include('ServerPi/theme.php'); ?></style>
+		<link rel="icon" href="ServerPi/images/favicon.png" type="image/x-ico">
+		<link rel="stylesheet" href="ServerPi/theme.css" type="text/css">
 	</head>
 	<body>
 		<div id="logo"></div>
