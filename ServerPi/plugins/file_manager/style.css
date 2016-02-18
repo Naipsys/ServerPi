@@ -33,7 +33,7 @@
 	padding: 5px;
 }
 
-#file_manager_box td {
+#file_manager_box td.legend, td.odd, td.even {
 	color: grey;
 	padding: 5px;
 }
