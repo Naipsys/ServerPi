@@ -6,23 +6,23 @@
 	margin-bottom: 20px;
 }
 
-#file_manager_box .element {
+#file_manager_box tr.element {
 	background-color: #212121;
 }
 
-#file_manager_box .element:nth-child(odd) {
+#file_manager_box tr.element:nth-child(odd) {
 	background-color: #181818;
 }
 
-#file_manager_box .element:nth-child(even) {
+#file_manager_box tr.element:nth-child(even) {
 	background-color: #212121;
 }
 
-#file_manager_box .element:nth-child(odd):hover {
+#file_manager_box tr.element:nth-child(odd):hover {
 	background: #3e3e3e;
 }
 
-#file_manager_box .element:nth-child(even):hover {
+#file_manager_box tr.element:nth-child(even):hover {
 	background-color: #3e3e3e;
 }
 
@@ -47,10 +47,10 @@
 	color : white;
 }
 
-#file_manager_box .accordion {
+#file_manager_box tr.accordion {
 	display: none;
 }
 
-#file_manager_box .accordion:target {
+#file_manager_box tr.accordion:target {
 	display: block;
 }
