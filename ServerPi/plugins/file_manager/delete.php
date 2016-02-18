@@ -14,7 +14,7 @@
    		} 
 	} 
 
-	$adress = urldecode($_GET['adress']);
+	$adress = $_POST['path'];
 	if (is_file($adress)) {
 		if (unlink($adress)) {
 		$adress = $URL .'/index.php?dir='. substr(dirname($adress), strlen($ADRESS) + 1) .'/';
