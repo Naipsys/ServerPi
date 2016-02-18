@@ -1,0 +1,10 @@
+<?php
+	include('../../config.php');
+	$path = $_POST['path'];
+	$new_name = $_POST['new_path'];
+	if (rename($path, $ADRESS . $new_path)) {
+		$adress = $URL .'/index.php?dir='. substr(dirname($path), strlen($ADRESS) + 1) .'/';
+		header('Location: '. $adress);
+		exit;
+	}
+?>
