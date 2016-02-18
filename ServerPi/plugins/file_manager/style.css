@@ -63,7 +63,7 @@
 }
 
 #file_manager_box .delete {
-	float: left;
+	float: right;
 	width: 33,33333%;
 	height: 62px;
 }
