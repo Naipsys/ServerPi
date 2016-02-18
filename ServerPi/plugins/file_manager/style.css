@@ -89,7 +89,7 @@
 }
 
 #file_manager_box .rename input[type=submit]:hover {
-	opacity: 0.8;
+	opacity: 0.95;
 }
 
 #file_manager_box .move input[type=text] {
@@ -112,7 +112,7 @@
 }
 
 #file_manager_box .move input[type=submit]:hover {
-	opacity: 0.8;
+	opacity: 0.95;
 }
 
 #file_manager_box .delete input[type=submit] {
@@ -126,5 +126,5 @@
 }
 
 #file_manager_box .delete input[type=submit]:hover {
-	opacity: 0.8;
+	opacity: 0.95;
 }
