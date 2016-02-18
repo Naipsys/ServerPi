@@ -50,6 +50,7 @@
 		echo '<div id="file_manager_box"><table><col width=709><col width=81><col width=10><tbody>';
 		if ($decode == '' || $decode == "./" || $decode == "/") { 
 			echo '<tr class="legend"><th>Name - /</th><th>Size</th><th></th></tr>';
+			$decode = "";
 		}
 		elseif (dirname($decode) == '.') { 
 			echo '<tr class="legend"><th>Name - /'. $decode .'</th><th>Size</th><th></th></tr>';
