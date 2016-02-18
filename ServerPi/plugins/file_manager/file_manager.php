@@ -52,7 +52,7 @@
 			echo '<tr class="legend"><th>Name - /</th><th>Size</th><th></th></tr>';
 		}
 		elseif (dirname($decode) == '.') { 
-			echo '<tr class="legend"><th>Name - /'. v .'</th><th>Size</th><th></th></tr>';
+			echo '<tr class="legend"><th>Name - /'. $decode .'</th><th>Size</th><th></th></tr>';
 			echo '<tr class="odd"><td><a href="?dir=">..</a></td><td>-</td><td></td></tr>';
 			$accordion_nb++;
 		} 
@@ -75,13 +75,16 @@
 						echo '<tr id="'. $accordion_nb .'a" class="accordion"><td width=800>
 								<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
 								<input type="text" name="new_name">
+								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 								<input type="submit" name="submit" value="Rename">
 								</form>
 								<form class="move" action="ServerPi/plugins/file_manager/rename.php" method="post">
-								<input type="text" name="path">
+								<input type="text" name="new_path">
+								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 								<input type="submit" name="submit" value="Move">
 								</form>
 								<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post">
+								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 								<input type="submit" name="submit" value="Delete">
 								</form>
 								</td>
@@ -100,13 +103,16 @@
 						echo '<tr id="'. $accordion_nb .'a" class="accordion"><td width=800>
 								<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
 								<input type="text" name="new_name">
+								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 								<input type="submit" name="submit" value="Rename">
 								</form>
 								<form class="move" action="ServerPi/plugins/file_manager/rename.php" method="post">
-								<input type="text" name="path">
+								<input type="text" name="new_path">
+								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 								<input type="submit" name="submit" value="Move">
 								</form>
 								<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post">
+								<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 								<input type="submit" name="submit" value="Delete">
 								</form>
 								</td>
