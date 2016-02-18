@@ -46,7 +46,7 @@
 	$dir = "./" . $_GET["dir"];
 	// Test if the directory exist.
 	if (is_dir($dir)) {
-		echo '<div id="file_manager_box"><table><tbody>';
+		echo '<div id="file_manager_box"><table>';
 		if ($_GET["dir"] == '' || $_GET["dir"] == "./" || $_GET["dir"] == "/") { 
 			echo '<tr><th>Name - /</th><th>Size</th><th width=10></th></tr>';
 		}
@@ -64,20 +64,20 @@
 					if(filetype($dir . $file) == "dir") {
 						// echo '<tr><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td WIDTH=81>-</td><td width=10><a title="Remove this dir" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) .'/" onclick="return(confirm(\'Are you sure to delete this directory ?\'));">×</a></td></tr>';
 						echo '<tr><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td WIDTH=81>-</td><td width=10><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
-						echo '<tr id="'. $accordion_nb .'accordion" class="accordion">lol</tr>';
+						echo '<div id="'. $accordion_nb .'accordion" class="accordion">lol</div>';
 						$accordion_nb++;
 					}
 					else {
 						$size = filesize_char($ADRESS . '/' . $_GET["dir"] . $file);
 						//echo '<tr><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a title="Remove this file" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) . '" onclick="return(confirm(\'Are you sure to delete this file ?\'));">×</a></td></tr>';
 						echo '<tr><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a href="#'. $accordion_nb .'accordion">&#x2807;</a></td></tr>';
-						echo '<tr id="'. $accordion_nb .'accordion" class="accordion">lol</tr>';
+						echo '<div id="'. $accordion_nb .'accordion" class="accordion">lol</div>';
 						$accordion_nb++;
 					}
 				}
 			}
 			closedir($dir_opened);
-			echo '</tbody></table></div>';
+			echo '</table></div>';
 		}
 	}
 	else {
