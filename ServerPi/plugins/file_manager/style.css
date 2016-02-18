@@ -48,6 +48,7 @@
 }
 
 #file_manager_box .accordion {
+	background-color: #181818;
 	display: none;
 }
 
@@ -57,8 +58,14 @@
 
 #file_manager_box .rename, .move, .delete {
 	float: left;
-	width: 33,3%;
+	width: 33,33333%;
 	height: 60px;
+}
+
+#file_manager_box .delete {
+	float: left;
+	width: 33,33333%;
+	height: 62px;
 }
 
 #file_manager_box .rename input[type=text] {
@@ -108,5 +115,4 @@
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 0;
 }
