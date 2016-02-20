@@ -29,7 +29,7 @@
 			copy($path, $ADRESS . $new_path . $dir_file_name);
 		}
 		else {
-			recurse_copy($path);
+			recurse_copy($path, $ADRESS . $new_path . $dir_file_name);
 		}
 	}
 	$adress = $URL .'/index.php?dir='. substr(dirname($path), strlen($ADRESS) + 1) .'/';
