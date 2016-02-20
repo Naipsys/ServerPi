@@ -22,6 +22,40 @@
 		return filesize($file);
 	}
 
+	// function found here : http://snipplr.com/view/5350/
+	function recursiveChmod ($path, $filePerm=0644, $dirPerm=0755) {
+        // Check if the path exists
+        if (!file_exists($path)) {
+            return(false);
+        }
+ 
+        // See whether this is a file
+        if (is_file($path)) {
+            // Chmod the file with our given filepermissions
+            chmod($path, $filePerm);
+ 
+        // If this is a directory...
+        } elseif (is_dir($path)) {
+            // Then get an array of the contents
+            $foldersAndFiles = scandir($path);
+ 
+            // Remove "." and ".." from the list
+            $entries = array_slice($foldersAndFiles, 2);
+ 
+            // Parse every result...
+            foreach ($entries as $entry) {
+                // And call this function again recursively, with the same permissions
+                recursiveChmod($path."/".$entry, $filePerm, $dirPerm);
+            }
+ 
+            // When we are done with the contents of the directory, we chmod the directory itself
+            chmod($path, $dirPerm);
+        }
+ 
+        // Everything seemed to work out well, return true
+        return(true);
+    }
+
 	// filesize_char : give a readable size of a file.
 	function filesize_char($file) {
 		$size = filesize64($file);
@@ -42,6 +76,7 @@
 		}
 	}
 	
+	recursiveChmod($ADRESS);
 	$accordion_nb = 1;
 	$decode = urldecode($_GET["dir"]);
 	$dir = "./". $decode;
@@ -66,7 +101,6 @@
 			while (($file = readdir($dir_opened)) !== false) {
 				if( $file != '.' && $file != '..' && $file != 'index.php' && $file != 'ServerPi') {
 					if(filetype($dir . $file) == "dir") {
-						// echo '<tr><td><a href="?dir='. $_GET["dir"] . $file .'/">' . $file . '/</a></td><td WIDTH=81>-</td><td width=10><a title="Remove this dir" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) .'/" onclick="return(confirm(\'Are you sure to delete this directory ?\'));">×</a></td></tr>';
 						if ($accordion_nb%2 == 1) {
 							echo '<tr class="odd"><td><a href="?dir='. urlencode($decode . $file .'/') .'">' . $file . '/</a></td><td>-</td><td><a href="#'. $accordion_nb .'a">&#x2807;</a></td></tr>';
 						}
@@ -75,21 +109,22 @@
 						}
 						echo 	'<tr id="'. $accordion_nb .'a" class="accordion">
 									<td class="container" colspan="3">
-										<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
-											<input type="text" name="new_name">
+										<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post" onsubmit="return(confirm(\'Are you sure to rename this directory?\'));">
+											<input type="text" name="new_name" placeholder="New name">
 											<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 											<input type="submit" name="submit" value="Rename">
 										</form>
-										<form class="move" action="ServerPi/plugins/file_manager/move.php" method="post">
-											<input type="text" name="new_path">
+										<form class="move" action="ServerPi/plugins/file_manager/move.php" method="post" onsubmit="return(confirm(\'Are you sure to move/copy this directory?\'));">
+											<input type="text" name="new_path" placeholder="Ex: /dir/">
 											<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 											<input type="submit" name="move" value="Move"><input type="submit" name="copy" value="Copy">
 										</form>
-										<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post">
+										<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post" onsubmit="return(confirm(\'Are you sure to delete this directory?\'));" >
 											<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'/">
 											<input type="submit" name="submit" value="Delete">
 										</form>
 										<form class="close" action="#">
+											<input type="hidden" name="dir" value="'. urlencode($decode) .'">
 											<input type="submit" name="submit" value="Close">
 										</form>
 									</td>
@@ -98,7 +133,6 @@
 					}
 					else {
 						$size = filesize_char($ADRESS . '/' . $decode . $file);
-						//echo '<tr><td><a href="' .$_GET["dir"]. $file . '">' . $file . '</a></td><td WIDTH=81>'. $size . '</td><td width=10><a title="Remove this file" href="ServerPi/plugins/file_manager/remove.php?adress='. urlencode(dirname(dirname(dirname(__DIR__))) . '/' . $_GET["dir"] . $file) . '" onclick="return(confirm(\'Are you sure to delete this file ?\'));">×</a></td></tr>';
 						if ($accordion_nb%2 == 1) {
 							echo '<tr class="odd"><td><a href="'. $decode . $file . '">' . $file . '</a></td><td>'. $size . '</td><td><a href="#'. $accordion_nb .'a">&#x2807;</a></td></tr>';
 						}
@@ -107,23 +141,23 @@
 						}
 						echo 	'<tr id="'. $accordion_nb .'a" class="accordion">
 									<td class="container" colspan="3">
-										<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post">
+										<form class="rename" action="ServerPi/plugins/file_manager/rename.php" method="post" onsubmit="return(confirm(\'Are you sure to rename this file?\'));">
 											<input type="text" name="new_name" placeholder="New name">
 											<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 											<input type="submit" name="submit" value="Rename">
 										</form>
-											<form class="move" action="ServerPi/plugins/file_manager/move.php" method="post">
+											<form class="move" action="ServerPi/plugins/file_manager/move.php" method="post" onsubmit="return(confirm(\'Are you sure to move/copy this file?\'));">
 											<input type="text" name="new_path" placeholder="Ex: /dir/">
 											<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 											<input type="submit" name="move" value="Move"><input type="submit" name="copy" value="Copy">
 										</form>
-											<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post">
+											<form class="delete" action="ServerPi/plugins/file_manager/delete.php" method="post" onsubmit="return(confirm(\'Are you sure to delete this file?\'));">
 											<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode . $file .'">
 											<input type="submit" name="submit" value="Delete">
 										</form>
 										<form class="close" action="#">
-												<input type="hidden" name="dir" value="'. urlencode($decode) .'">
-												<input type="submit" name="submit" value="Close">
+											<input type="hidden" name="dir" value="'. urlencode($decode) .'">
+											<input type="submit" name="submit" value="Close">
 										</form>
 									</td>
 								</tr>';
