@@ -16,20 +16,29 @@
 	    closedir($dir); 
 	} 
 
+	function dontEraseMe($path_to_secure) {
+		$nb = 1;
+		$new_path_secure = $path_to_secure;
+		while (file_exists($new_path_secure)) {
+			$new_path_secure = $path_to_secure .'.'. $nb;
+			$nb++;
+		}
+		return $new_path_secure;
+	}
+
 	include('../../config.php');
 	$path = $_POST['path'];
 	$new_path = $_POST['new_path'];
 	$dir_file_name = substr($path, strlen(dirname($path))+1);
 	if (isset($_POST['move'])) {
-		rename($path, $ADRESS . $new_path . $dir_file_name);
-		echo 'rename<br>'. $ADRESS . $new_path . $dir_file_name . '<br>' . $path;
+		rename($path, dontEraseMe($ADRESS . $new_path . $dir_file_name));
 	}
 	else {
 		if (is_file($path)) {
-			copy($path, $ADRESS . $new_path . $dir_file_name);
+			copy($path, dontEraseMe($ADRESS . $new_path . $dir_file_name));
 		}
 		else {
-			recurse_copy($path, $ADRESS . $new_path . $dir_file_name);
+			recurse_copy($path, dontEraseMe($ADRESS . $new_path . $dir_file_name));
 		}
 	}
 	$adress = $URL .'/index.php?dir='. substr(dirname($path), strlen($ADRESS) + 1) .'/';

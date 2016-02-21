@@ -22,40 +22,6 @@
 		return filesize($file);
 	}
 
-	// function found here : http://snipplr.com/view/5350/
-	function recursiveChmod ($path, $filePerm=0644, $dirPerm=0755) {
-        // Check if the path exists
-        if (!file_exists($path)) {
-            return(false);
-        }
- 
-        // See whether this is a file
-        if (is_file($path)) {
-            // Chmod the file with our given filepermissions
-            chmod($path, $filePerm);
- 
-        // If this is a directory...
-        } elseif (is_dir($path)) {
-            // Then get an array of the contents
-            $foldersAndFiles = scandir($path);
- 
-            // Remove "." and ".." from the list
-            $entries = array_slice($foldersAndFiles, 2);
- 
-            // Parse every result...
-            foreach ($entries as $entry) {
-                // And call this function again recursively, with the same permissions
-                recursiveChmod($path."/".$entry, $filePerm, $dirPerm);
-            }
- 
-            // When we are done with the contents of the directory, we chmod the directory itself
-            chmod($path, $dirPerm);
-        }
- 
-        // Everything seemed to work out well, return true
-        return(true);
-    }
-
 	// filesize_char : give a readable size of a file.
 	function filesize_char($file) {
 		$size = filesize64($file);
@@ -75,8 +41,7 @@
 			return round(filesize64($file),2) . 'B';
 		}
 	}
-	
-	recursiveChmod($ADRESS);
+
 	$accordion_nb = 1;
 	$decode = urldecode($_GET["dir"]);
 	$dir = "./". $decode;
