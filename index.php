@@ -17,7 +17,18 @@
 			}
 		?>
 	</head>
-	<body>
+	<body onLoad="setTimeout('document.getElementById(\'notification\').style.display = \'none\'',4000)">
+		<?php 	$text = urldecode($_GET['notif']);
+				if ($text != "") {
+					echo '
+					<script type="text/javascript">
+						document.write(
+						\'<div id="notification">\'
+						+\''. $text .'\'
+						+\'</div>\' )
+					</script>'; 
+				}		
+		?>
 		<div id="logo"></div>
 		<?php 	$plugins_ref = fopen("ServerPi/plugins/plugins", "r");
 			if ($plugins_ref) {
