@@ -7,5 +7,7 @@
 	$LANGUAGE_FILE_MANAGER['copy']      			= "Copy";
 	$LANGUAGE_FILE_MANAGER['delete']		    	= "Delete";
 	$LANGUAGE_FILE_MANAGER['close'] 		    	= "Close";
-	$LANGUAGE_FILE_MANAGER['error_directory']	= "Unfound directory";
+	$LANGUAGE_FILE_MANAGER['error_directory']		= "Unfound directory";
+	$LANGUAGE_FILE_MANAGER['new_dir'] 			= "New folder";
+	$LANGUAGE_FILE_MANAGER['new_file']			= "New file";
 ?>
