@@ -138,3 +138,20 @@
 #file_manager_box .close {
 	text-align: center;
 }
+
+#file_manager_box .new input[type=submit] {
+	width: 50%;
+	height: 30px;
+	border: 0;
+	background-color: #1e5466;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	float: left;
+}
+
+#file_manager_box .new_tr {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
