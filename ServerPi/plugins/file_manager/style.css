@@ -21,10 +21,12 @@
 
 #file_manager_box .odd:hover {
 	background-color: #3e3e3e;
+	opacity: 0.7;
 }
 
 #file_manager_box .even:hover {
 	background-color: #3e3e3e;
+	opacity: 0.7;
 }
 
 #file_manager_box th {
@@ -143,8 +145,8 @@
 	width: 50%;
 	height: 30px;
 	border: 0;
-	background-color: #1e5466;
-	color: white;
+	background-color: #3e3e3e;
+	color: grey;
 	text-align: center;
 	text-transform: uppercase;
 	float: left;

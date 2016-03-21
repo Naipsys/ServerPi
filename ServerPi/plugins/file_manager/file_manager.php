@@ -14,14 +14,29 @@
 		if ($decode == '' || $decode == "./" || $decode == "/") { 
 			echo '<tr class="legend"><th>'. $LANGUAGE_FILE_MANAGER['name'] .' - /</th><th>'. $LANGUAGE_FILE_MANAGER['size'] .'</th><th></th></tr>';
 			$decode = "";
+			echo '<tr><td colspan="3" class="new_tr"><form class="new" action="ServerPi/plugins/file_manager/new.php" method="post">
+						<input type="submit" name="file" value="'. $LANGUAGE_FILE_MANAGER['new_file'] .'">
+						<input type="submit" name="dir" value="'. $LANGUAGE_FILE_MANAGER['new_dir'] .'">
+						<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode .'">
+					</form></td></tr>';
 		}
 		elseif (dirname($decode) == '.') { 
 			echo '<tr class="legend"><th>'. $LANGUAGE_FILE_MANAGER['name'] .' - /'. $decode .'</th><th>'. $LANGUAGE_FILE_MANAGER['size'] .'</th><th></th></tr>';
+			echo '<tr><td colspan="3" class="new_tr"><form class="new" action="ServerPi/plugins/file_manager/new.php" method="post">
+						<input type="submit" name="file" value="'. $LANGUAGE_FILE_MANAGER['new_file'] .'">
+						<input type="submit" name="dir" value="'. $LANGUAGE_FILE_MANAGER['new_dir'] .'">
+						<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode .'">
+					</form></td></tr>';
 			echo '<tr class="odd"><td><a href="?dir=">..</a></td><td>-</td><td></td></tr>';
 			$accordion_nb++;
 		} 
 		else { 
 			echo '<tr class="legend"><th>'. $LANGUAGE_FILE_MANAGER['name'] .' - /'. $decode .'</th><th>'. $LANGUAGE_FILE_MANAGER['size'] .'</th><th></th></tr>';
+			echo '<tr><td colspan="3" class="new_tr"><form class="new" action="ServerPi/plugins/file_manager/new.php" method="post">
+						<input type="submit" name="file" value="'. $LANGUAGE_FILE_MANAGER['new_file'] .'">
+						<input type="submit" name="dir" value="'. $LANGUAGE_FILE_MANAGER['new_dir'] .'">
+						<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode .'">
+					</form></td></tr>';
 			echo '<tr class="odd"><td><a href="?dir='. urlencode(dirname($decode).'/') .'">..</a></td><td>-</td><td width=10></td></tr>'; 
 			$accordion_nb++;
 		}
@@ -94,12 +109,7 @@
 				}
 			}
 			closedir($dir_opened);
-			echo '<tr><td colspan="3" class="new_tr"><form class="new" action="ServerPi/plugins/file_manager/new.php" method="post">
-						<input type="submit" name="file" value="'. $LANGUAGE_FILE_MANAGER['new_file'] .'">
-						<input type="submit" name="dir" value="'. $LANGUAGE_FILE_MANAGER['new_dir'] .'">
-						<input type="hidden" name="path" value="'. $ADRESS . '/' . $decode .'">
-					</form></td></tr>
-				</tbody></table></div>';
+			echo '</tbody></table></div>';
 		}
 	}
 	else {
