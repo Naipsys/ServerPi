@@ -11,8 +11,4 @@ ServerPi is a homepage for your Raspberry Pi who allows you to explore file and 
 - Go to the path found in the last point, clean it and clone the repository : 
 
   ```git clone https://github.com/Naipsys/ServerPi.git .```
-- Now you have to configure ServerPi by editing the file ServerPi/config.php.
-
->
-
-a test
+- Now you have to configure ServerPi by editing the file ServerPi/config.php
