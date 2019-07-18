@@ -1,7 +1,11 @@
 # ServerPi
 ServerPi is a homepage for your Raspberry Pi who allows you to explore file and manage your system.
 
-#### Setup
+### Disclaimer
+
+This project is not maintained anymore.
+
+### Setup
 - First, you need to install apache2 and php5 on your Raspberry Pi :
 
   ```sudo apt-get install apache2 php5```
